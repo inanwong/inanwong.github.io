@@ -1,0 +1,40 @@
+# Jekyll Conf
+source      : .
+destination : ./_site
+plugins     : ./_plugins
+permalink   : /blog/:year/:month/:day/:title.html
+pygments    : true
+safe        : true
+
+exclude     : ["README.markdown"]
+
+# Blog Info
+blogname     : "Inan Wong's Blog"
+
+blogurl      : http://inanwong.github.io
+
+author       : Inan Wong
+
+feedname     : http://feeds.feedburner.com/inanwong
+
+github_user  : inanwong
+
+title_suffix : Inan Wong
+
+# All Jekyll-Bootstrap specific configurations are namespaced into this hash
+#
+JB :
+  BASE_PATH : false
+
+  ASSET_PATH : false
+  
+  archive_path: /archive.html
+  categories_path : /categories.html
+  tags_path : /tagcloud/index.html
+  
+  sharing :
+    provider : false
+
+PATH:
+  tags_path : /tagcloud/index.html
+  

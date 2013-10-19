@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div id="primary" class="span-17">
+
+	<div id="cse" style="width: 100%;">
+		Loading
+	</div>
+	<script src="http://www.google.co.in/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">
+		function parseQueryFromUrl() {
+		var queryParamName="q";
+		var search=window.location.search.substr(1);
+		var parts=search.split('&');
+		for(var i=0;i<parts.length;i++) {
+		var keyvaluepair=parts[i].split('=');
+		if(decodeURIComponent(keyvaluepair[0])==queryParamName) {
+		return decodeURIComponent(keyvaluepair[1].replace(/\+/g,' '));
+		}
+		}
+		return '';
+		}
+		google.load('search','1', {style:google.loader.themes.MINIMALIST
+		});
+		google.setOnLoadCallback(function() {
+		var customSearchControl=new google.search.CustomSearchControl('008040936530008956853:iuihqorwvee');
+		customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+		var options=new google.search.DrawOptions();
+		options.enableSearchResultsOnly();
+		customSearchControl.draw('cse',options);
+		var queryFromUrl=parseQueryFromUrl();
+		if(queryFromUrl) {
+		customSearchControl.execute(queryFromUrl);
+		}
+		},true);
+	</script>
+
+	{{ content }}
+
+	<link rel="stylesheet" type="text/css" href="/assets/css/searchresults.css" />
+</div>
+
+<div id="secondary" class="span-6 last">
+	{% include site-sidebar.html %}
+</div>
+
+<div class="c"></div>
+

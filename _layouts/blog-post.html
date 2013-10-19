@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<section id="primary" class="span-24 last">
+
+	<div id="blogcontent">
+
+		<aside class="postmeta full span-5">
+
+			{% include blogpost-left.html %}
+
+		</aside>
+
+		<article class="post full span-18 last">
+			<header>
+				<h1>{{ page.title }}</h1>
+			</header>
+			{{ content }}
+			<footer>
+				<div class="blocked tags">
+					<p>
+						{% for tag in page.tags %}
+						<a href="/tags/{{tag}}/index.html">{{ tag }}</a> |
+						{% endfor %}
+					</p>
+				</div>
+			</footer>
+			<div class="hr"></div>
+
+			<div>
+
+				<!-- Enable Google Plus comments -->
+				{% include gplus.html %}
+
+			</div>
+
+			<!-- Discus Comments -->
+			<div id="disqus_thread"></div>
+
+			<!-- Enable Disqus comments -->
+			{% include disqus.html %}
+
+		</article>
+
+		<div class="c">
+			&nbsp;
+		</div>
+
+	</div>
+
+</section>
+
+<div class="c">
+	&nbsp;
+</div>
+
+{% include commentcount.js %}
+

@@ -1,0 +1,80 @@
+{% comment %}<!--
+The tag_cloud include is a listing helper for tags.
+Usage:
+  1) assign the 'tag_cloud' variable to a valid array of tags.
+  2) include Inan/tag_cloud
+  example:
+    <ul>
+  	  {% assign tag_cloud = site.tags %}  
+  	  {% include Inan/tag_cloud %}
+  	</ul>
+  
+  Notes: 
+    Tags can be either a Hash of tag objects (hashes) or an Array of tag-names (strings).
+    The encapsulating 'if' statement checks whether tag_cloud is a Hash or Array.
+    site.tags is a Hash while page.tags is an array.
+    
+  This helper can be seen in use at: ../_layouts/default.html
+-->{% endcomment %}
+
+{% if site.Inan.tag_cloud.provider == "custom" %}
+  {% include custom/tag_cloud %}
+{% else %}
+  {% assign nTextSizeMin = 150 %}
+  {% assign nTextSizeMax = 450 %}
+	
+  {% assign nTextSizeRange = nTextSizeMax | minus: nTextSizeMin %}
+  {% assign nTextSizeAdd = 50 %}
+	
+  {% assign nTextSizeCnt = nTextSizeRange | divided_by: nTextSizeAdd %}
+  {% assign nTextSizeCnt = nTextSizeCnt | plus: 1 %}
+	
+  {% assign nTagSizeMin = 1 %}
+  {% assign nTagSizeMax = 1 %}
+	
+	{% for tag in tagcloud %}			
+		{% assign nCurrTagSize = tag[1].size %}
+		{% if nCurrTagSize > nTagSizeMax %}
+			{% assign nTagSizeMax = nCurrTagSize %}
+		{% endif %}
+		{% if nCurrTagSize < nTagSizeMin %}
+			{% assign nTagSizeMin = nCurrTagSize %}
+		{% endif %}
+	{% endfor %}
+	
+	{% assign nTagCnt = nTagSizeMax | minus: nTagSizeMin | plus: 1 %}
+	
+	{% if nTagCnt > nTextSizeCnt %}
+		{% assign nTextSizeAdd = nTextSizeRange | divided_by: nTagCnt %}
+	{% endif %}
+	
+  {% if tag_cloud.first[0] == null %}
+    {% for tag in tag_cloud %} 
+			{% assign nTextSize = site.tags[tag].size | times: nTextSizeAdd | plus: nTextSizeMin %}
+			<span style="font-size: {{ nTextSize | minus: nTextSizeAdd}}%">
+				<a href="{{ site.PATH.tags_path }}#{{ tag }}-ref" title="X{{site.tags[tag].size}}">{{ tag }} </a>
+			</span>
+    {% endfor %}
+  {% else %}
+    {% for tag in tag_cloud %} 
+			{% assign nTextSize = tag[1].size | times: nTextSizeAdd | plus: nTextSizeMin %}
+			<span style="font-size: {{ nTextSize | minus: nTextSizeAdd}}%">
+				<a href="{{ site.PATH.tags_path }}#{{ tag[0] }}-ref" title="X{{ tag[1].size }}">{{ tag[0] }} </a>
+			</span>
+    {% endfor %}
+  {% endif %}
+  
+  {% comment %}<!--
+  {% if tag_cloud.first[0] == null %}
+    {% for tag in tag_cloud %} 
+    	<li><a href="{{ site.PATH.tags_path }}#{{ tag }}-ref">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+    {% endfor %}
+  {% else %}
+    {% for tag in tag_cloud %} 
+    	<li><a href="{{ site.PATH.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+    {% endfor %}
+  {% endif %}
+  -->{% endcomment %}
+  
+{% endif %}
+{% assign tag_cloud = nil %}

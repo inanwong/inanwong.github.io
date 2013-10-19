@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<style>
+	div.post, div#comments {
+		background: none;
+		padding-left: 0;
+	}
+</style>
+
+<section id="primary" class="span-17">
+	<div id="blogcontent">
+		<div class="post full">
+			{{ content }}
+		</div>
+	</div>
+</section>
+
+<aside id="secondary" class="span-6 last">
+	{% include post-list-sidebar.html %}
+</aside>
+
