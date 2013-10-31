@@ -1,17 +1,40 @@
-// 单例模式：类创建自己的唯一实例
+
+
+#include "iostream"
+using namespace std;
+
 class Singleton
 {
 public:
-	static Singleton* GetInstance()
-	{
-		if (NULL == m_pSingleton)
-		{
-			m_pSingleton = new Singleton();
-		}
-	}
+	void Function() const;
+public:
+	static Singleton* GetInstance();
 protected:
 	Singleton() {};
 	virtual ~Singleton() {};
 private:
-	static Singleton* m_pSingleton;
+	static Singleton* s_pSingleton;
 };
+
+void Singleton::Function() const
+{
+	printf("%s", __FUNCTION__);
+}
+
+Singleton* Singleton::GetInstance()
+{
+	if (0 == s_pSingleton)
+	{
+		s_pSingleton = new Singleton();
+	}
+	return s_pSingleton;
+}
+
+Singleton* Singleton::s_pSingleton = 0;
+
+int main(int argc, char* argv[])
+{
+	Singleton* pSingleton = Singleton::GetInstance();
+	pSingleton->Function();
+	return 0;
+}

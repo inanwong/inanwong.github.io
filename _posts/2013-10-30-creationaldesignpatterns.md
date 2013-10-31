@@ -9,8 +9,6 @@ tags:
 - 设计模式
 ---
 
-<pre><code>{% include /source/cplusplus/Singleton.cpp %}</code></pre>
-
 ## 创建型设计模式(Creational Desing Patterns) ##
 
 类是如何创建对象的？
@@ -30,25 +28,7 @@ tags:
 单例模式：类创建自己的唯一实例
 使用惰性(lazy)初始化，`GetInstance()`返回值直到第一次被访问时才创建和保存
 
-	class Singleton
-	{
-	public:
-		static Singleton* GetInstance()
-		{
-			if (NULL == m_pSingleton)
-			{
-				m_pSingleton = new Singleton();
-			}
-			return m_pSingleton;
-		}
-	protected:
-		Singleton() {};
-		virtual ~Singleton() {};
-	private:
-		static Singleton* m_pSingleton;
-	};
-
-	Singleton* Singleton::m_pSingleton = NULL;
+<pre><code>{% include /source/cplusplus/Singleton.cpp %}</code></pre>
 
 单例模式：类创建自己的唯一实例
 使用非惰性初始化，编译时生成对象。如果编译时无法确定参数或者不满足生成对象的条件时不使用该方法
