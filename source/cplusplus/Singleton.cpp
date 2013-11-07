@@ -1,6 +1,4 @@
-
-
-#include "iostream"
+#include <iostream>
 using namespace std;
 
 class Singleton
@@ -13,24 +11,20 @@ protected:
 	Singleton() {};
 	virtual ~Singleton() {};
 private:
-	static Singleton* s_pSingleton;
+	static Singleton s_theSingleton;
 };
 
 void Singleton::Function() const
 {
-	printf("%s", __FUNCTION__);
+	std::cout<<"__FUNCTION__"<<std::endl;
 }
 
 Singleton* Singleton::GetInstance()
 {
-	if (0 == s_pSingleton)
-	{
-		s_pSingleton = new Singleton();
-	}
-	return s_pSingleton;
+	return &s_theSingleton;
 }
 
-Singleton* Singleton::s_pSingleton = 0;
+Singleton Singleton::s_theSingleton;
 
 int main(int argc, char* argv[])
 {
