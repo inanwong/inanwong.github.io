@@ -1,6 +1,7 @@
-#include <iostream>
+#include "CommonBridge.h"
 #include <list>
-using namespace std;
+
+NAMESPACE_START(SingletonFactory)
 
 class Singleton;
 
@@ -93,9 +94,13 @@ SingletonPairList Singleton::s_lsSingleton;
 static SingletonA g_theSingletonA;
 static SingletonB g_theSingletonB;
 
-int main(int argc,char* argv[])
+static int Run(int argc, char** argv)
 {
 	Singleton* pSingleton = Singleton::GetInstance();
 	pSingleton->Function();
 	return 0;
 }
+
+RegistUnitRun("SingletonFactory", Run);
+
+NAMESPACE_END

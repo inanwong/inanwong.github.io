@@ -1,10 +1,11 @@
-#include <iostream>
-using namespace std;
+#include "CommonBridge.h"
+
+NAMESPACE_START(SingletonLazy)
 
 class Singleton
 {
 public:
-	void Function() const;
+	void Interface() const;
 public:
 	static Singleton* GetInstance();
 protected:
@@ -14,9 +15,9 @@ private:
 	static Singleton* s_pSingleton;
 };
 
-void Singleton::Function() const
+void Singleton::Interface() const
 {
-	std::cout<<"__FUNCTION__"<<std::endl;
+	std::cout<<__FUNCTION__<<std::endl;
 }
 
 #if 1
@@ -36,11 +37,15 @@ Singleton* Singleton::GetInstance()
 }
 #endif
 
-Singleton* Singleton::s_pSingleton = 0;
+Singleton* Singleton::s_pSingleton = NULL;
 
-int main(int argc, char* argv[])
+static int Run(int argc, char** argv)
 {
 	Singleton* pSingleton = Singleton::GetInstance();
-	pSingleton->Function();
+	pSingleton->Interface();
 	return 0;
 }
+
+RegistUnitRun("SingletonLazy", Run);
+
+NAMESPACE_END

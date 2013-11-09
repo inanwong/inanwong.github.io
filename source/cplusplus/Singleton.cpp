@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include "CommonBridge.h"
 
 class Singleton
 {
@@ -16,7 +15,7 @@ private:
 
 void Singleton::Function() const
 {
-	std::cout<<"__FUNCTION__"<<std::endl;
+	std::cout<<__FUNCTION__<<std::endl;
 }
 
 Singleton* Singleton::GetInstance()
@@ -26,9 +25,15 @@ Singleton* Singleton::GetInstance()
 
 Singleton Singleton::s_theSingleton;
 
-int main(int argc, char* argv[])
+static int Run(int argc, char** argv)
 {
 	Singleton* pSingleton = Singleton::GetInstance();
 	pSingleton->Function();
 	return 0;
 }
+
+RegistUnitRun("Singleton", Run);
+
+
+
+
