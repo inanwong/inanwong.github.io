@@ -9,8 +9,8 @@ public:
 public:
 	static Singleton* GetInstance();
 protected:
-	Singleton() {};
-	virtual ~Singleton() {};
+	Singleton() {}
+	virtual ~Singleton() {}
 private:
 	static Singleton* s_pSingleton;
 };

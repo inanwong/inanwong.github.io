@@ -3,17 +3,17 @@
 class Singleton
 {
 public:
-	void Function() const;
+	void Interface() const;
 public:
 	static Singleton* GetInstance();
 protected:
-	Singleton() {};
-	virtual ~Singleton() {};
+	Singleton() {}
+	virtual ~Singleton() {}
 private:
 	static Singleton s_theSingleton;
 };
 
-void Singleton::Function() const
+void Singleton::Interface() const
 {
 	std::cout<<__FUNCTION__<<std::endl;
 }
@@ -28,7 +28,7 @@ Singleton Singleton::s_theSingleton;
 static int Run(int argc, char** argv)
 {
 	Singleton* pSingleton = Singleton::GetInstance();
-	pSingleton->Function();
+	pSingleton->Interface();
 	return 0;
 }
 

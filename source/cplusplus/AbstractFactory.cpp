@@ -1,8 +1,6 @@
 #include "CommonBridge.h"
 
-// 简单工厂
-
-enum PRODUCT_TYPE {TYPE_A, TYPE_B};
+// 抽象工厂
 
 // 产品A
 class AbstractProductA

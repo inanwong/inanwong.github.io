@@ -17,8 +17,8 @@ class Singleton
 {
 public:
 
-	Singleton() {};
-	virtual ~Singleton() {};
+	Singleton() {}
+	virtual ~Singleton() {}
 
 public:
 
@@ -59,11 +59,11 @@ public:
 	SingletonA()
 	{
 		Singleton::Register("SingletonA", this);
-	};
+	}
 	virtual ~SingletonA()
 	{
 
-	};
+	}
 public:
 	void Function() const
 	{
@@ -77,11 +77,11 @@ public:
 	SingletonB()
 	{
 		Singleton::Register("SingletonB", this);
-	};
+	}
 	virtual ~SingletonB()
 	{
 
-	};
+	}
 public:
 	void Function() const
 	{
