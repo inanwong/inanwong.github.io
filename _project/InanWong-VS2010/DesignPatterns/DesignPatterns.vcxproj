@@ -75,7 +75,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\cplusplus\AbstractFactory.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\AdapterClass.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\AdapterObjects.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Bridge.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Builder.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\FactoryMethod.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Prototype.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\PrototypeImprove.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SimpleFactory.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Singleton.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SingletonFactory.cpp" />

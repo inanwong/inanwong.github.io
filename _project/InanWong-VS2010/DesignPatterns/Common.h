@@ -11,16 +11,16 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////
 
 /*
- *	单元运行组件
+ *	单元运行套件
  */
 class CUnitRun
 {
 public:
 	typedef int(*RunType)(int argc, char** argv);
 public:
-	CUnitRun() {};
+	CUnitRun() {}
 	CUnitRun(CUnitRun::RunType pRunType, int argc = 0, char** argv = NULL)
-		: m_pRunType(pRunType), m_argc(argc) , m_argv(argv) {};
+		: m_pRunType(pRunType), m_argc(argc) , m_argv(argv) {}
 	int operator()()
 	{
 		assert(NULL != m_pRunType);

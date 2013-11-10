@@ -19,6 +19,9 @@
     <Filter Include="DesignPatterns\Creational">
       <UniqueIdentifier>{b2663e3e-3087-43ab-aff7-4e32df4e0aeb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DesignPatterns\Structural">
+      <UniqueIdentifier>{6b85793c-44b2-4fcf-a3a5-0f71e95bd496}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common.cpp">
@@ -44,6 +47,24 @@
     </ClCompile>
     <ClCompile Include="..\..\..\source\cplusplus\SingletonFactory.cpp">
       <Filter>DesignPatterns\Creational</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Builder.cpp">
+      <Filter>DesignPatterns\Creational</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Prototype.cpp">
+      <Filter>DesignPatterns\Creational</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\PrototypeImprove.cpp">
+      <Filter>DesignPatterns\Creational</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\AdapterClass.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\AdapterObjects.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Bridge.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
