@@ -66,6 +66,12 @@
     <ClCompile Include="..\..\..\source\cplusplus\Bridge.cpp">
       <Filter>DesignPatterns\Structural</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Composite.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Facade.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
