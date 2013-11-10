@@ -11,294 +11,96 @@ tags:
 
 ## 设计模式(Desing Patterns) ##
 
-类模式：处理类和子类之间的关系，这些关系通过继承，建立是静态的，在编译时刻便确定下来了。
-对象模式：处理对象间的关系，这些关系在运行时是动态的。
+### 设计模式分类 ###
 
+根据目的准则分类：创建型，结构型，行为型
 
+-   **创建型模式**：与对象的创建有关；    
+-   **结构型模式**：处理类或对象的组合；    
+-   **行为型模式**：对类或对象怎样交互和怎样分配职责进行描述。    
+	
+根据范围准则分类：类模式，对象模式，这两种模式是为了延迟创建，类模式通过继承的方式描述算法和控制流，把对象的创建延迟到子类，对象模式通过描述一组对象的协助把对象的创建延迟到另一个对象中。    
 
+-   **类模式**：处理类和子类之间的关系，这些关系通过**继承**，建立是静态的，在编译时刻便确定下来了。几乎所有模式都使用继承机制，所以“类模式”只指那些集中于处理类间关系的模式，而大部分模式都属于对象模式的范畴。
+-   **对象模式**：处理对象间的关系，这些关系在运行时是动态的。    
 
+I:看一个设计模式是类模式还是对象模式，只要看他的可变部分是不是通过继承实现的即可。
 
+### 设计模式条目 ###
 
+创建型(类模式)    
+Factory Method：定义一个用于创建对象的接口，让子类决定将哪一个类实例化。Factory Method使一个类的实例化延迟到其子类。
+I:描述的是工厂类族与产品类族的组织架构，以及在该架构下使用某一个具体工厂类实例化一个产品对象（假装这个产品类族只有一个）。
+I:工厂方法的产品类族的复用方式为继承。
+I:简单工厂模式，只有一个工厂实例，可以动态创建产品类族中的所有类实例。
 
+创建型(对象模式)    
+Singleton：保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+I:全局变量的美化版。
 
+Abstract Factory：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
+I:同工厂方法（假装这个产品类族有多个），可以改变产品对象类族，类族内外混合组合。
+I:抽象工厂方法的产品类族的复用方式为继承以及组合，如果仅是继承，那他就是一个工厂方法。
 
+Builder：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
+I:如果一个对象的创建过程需要有限的工序中的诺干道工序排列组合，可以使用Builder模式，隐藏创建过程，对外提供接口获得最终的创建结果。
 
+Prototype：用原型实例指定创建对象的种类，并且通过拷贝这个原型来创建新的对象。
+I:原型模式是通过现有对象创建新对象，用于对象的动态改进，不仅仅只有拷贝，还有扩展。
 
+- - -
 
+结构型(类模式)   
 
+Adapter(类)：将一个类的接口转换成客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
 
+结构型(对象模式)   
 
+Adapter(对象)：将一个类的接口转换成客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。
 
-空类自动生成的默认函数包括,**默认构造函数;拷贝构造函数;默认赋值函数;析构函数;取址运算符;取址运算符(const)**.
+Bridge：将抽象部分与它的实现部分分离，使它们都可以独立地变化。
 
-**重写默认构造函数**：尽量在初始化列表里初始化所有数据成员，注意按照声明顺序写初始化列表；单参数的构造函数，可以作为转换构造函数使用，加了explicit修饰的单参构造函数不作为转换构造函数使用，必须显式调用。
+Composite：将对象组合成树形结构以表示“部分-整体”的层次结构。Composite使得客户对单个对象和复合对象的使用具有一致性。
 
-**重写析构函数**：作为基类，析构函数必须声明为虚函数(virtual)。
+Decorator：动态地给一个对象添加一些额外的职责。就扩展功能而言，Decorator模式比生成子类方式更为灵活。
 
-**禁用拷贝构造函数以及赋值函数**：使用宏私有化或者继承Uncopybale类（估计没人会这么做）
+Facade：为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。
 
-    // 禁止拷贝构造
-    #ifndef DISALLOW_COPY_AND_ASSIGN
-    #define DISALLOW_COPY_AND_ASSIGN(ClassName)	\
-    	ClassName(const ClassName&);            \
-    	void operator=(const ClassName&);
-    #endif // DISALLOW_COPY_AND_ASSIGN
-    
+Flyweight：运用共享技术有效地支持大量细粒度的对象。 
 
+Proxy：为其他对象提供一个代理以控制对这个对象的访问。
 
-## 一个空类默认生成的函数 ##
+- - -
 
-定义一个空的C++类，例如
+行为型(类模式)    
 
-	class Empty
-	{
-	}
+Interpreter：给定一个语言,定义它的文法的一种表示，并定义一个解释器,该解释器使用该表示来解释语言中的句子。
 
-一个空的class在C++编译器处理过后就不再为空，编译器会自动地为我们声明一些member function，一般编译过去就相当于
+TemplateMethod：定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。TemplateMethod使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
 
-	class Empty
-	{
-	public:
-		Empty(); // 缺省构造函数
-		Empty(const Empty&); // 拷贝构造函数
-		~Empty(); // 析构函数
-		Empty& operator=(const Empty&); // 赋值运算符
-		Empty* operator&(); // 取址运算符
-		const Empty* operator&() const; // 取址运算符 const
-	};
+行为型(对象模式)   
 
-一般的书上好像都是前面四种：默认构造函数，拷贝构造函数，默认赋值函数以及析构函数，后面两种其实属于，但要需要注意的是，只有当你需要用到这些函数的时候，编译器才会去定义它们。
+Chain of Responsibility：为解除请求的发送者和接收者之间耦合，而使多个对象都有机会处理这个请求。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它。
 
-如果你只是声明一个空类，不做任何事情的话，编译器会自动为你生成一个默认构造函数、一个拷贝默认构造函数、一个默认拷贝赋值操作符和一个默认析构函数。这些函数只有在第一次被调用时，才会被编译器创建。所有这些函数都是inline和public的。
+Command：将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可取消的操作。
 
-默认的析构函数是非虚函数（除非基类有自己声明的虚析构函数）。而拷贝默认构造函数和默认拷贝赋值操作符知识是单纯将来源对象的每一个非静态成员拷贝到对象目标中（bitwise copy）。
+Iterator：提供一种方法顺序访问一个聚合对象中各个元素,而又不需暴露该对象的内部表示。
 
-其中的默认拷贝赋值操作符只有在生成的代码合法并且有机会证明它有意义存在时才会生成。这就说明，如果你打算在一个“内含引用成员”或者“内含const成员”的类内支持赋值操作，就必须定义自己的默认拷贝赋值操作符。因为C++本身不允许引用改指不同的对象，也不允许更改const成员。
+Mediator：用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。
 
-最后一种情况，当基类将自己的默认拷贝赋值操作符声明为private时，子类就不会产生自己的的默认拷贝赋值操作符。因为假如产生了这样的默认拷贝赋值操作符，它会试着去调用基类的默认拷贝赋值操作符去处理基类的部分，不幸的是，它没有权利。
+Memento：在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。这样以后就可将该对象恢复到保存的状态。
 
-你可以将拷贝构造函数或默认拷贝赋值操作符声明为private。这样明确声明一个成员函数，就阻止了编译器暗自创建的默认版本，而这些函数为private，使得可以成功阻止人们调用它。
+Observer：定义对象间的一种一对多的依赖关系,以便当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并自动刷新。
 
-上面的做法有一个隐患，因为类自身的member和friend还是可以调用这些private函数。有一个很刁钻的方法，“将成员函数声明为private而且故意不实现它们”，这样既阻止了默认函数的生成，而且如果你试着调用这些函数，就会得到一个链接错误。只声明，不定义，链接器报错。甚至在声明的时候，你连参数也不用写。
+State：允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它所属的类。
 
-而试着将上述的链接器错误提前到编译器也是可以的。我们专门设计一个类Unconpyable。
+Strategy：定义一系列的算法,把它们一个个封装起来,并且使它们可相互替换。本模式使得算法的变化可独立于使用它的客户。
 
-    class Uncopybale {
-    protected:
-        Uncopyable() {}
-        ~Uncopyable() {}
-    private:
-        Ucopyable(const Uncopyable&)
-        Uncopyable& operator=(const Uncopyable&)
-    };
+Visitor：表示一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。
 
-为了阻止对象被拷贝，我们唯一需要做的就是继承Uncopyable。这些函数的默认生成版本会尝试调用其基类的对应版本，那些调用会被编译器拒绝，因为它基类的拷贝函数是private。
+### 约定 ###
 
-Boost提供的noncopyable类也有类似的功能。
-
-**忠告：为了驳回编译器自动提供的技能，可将相应的成员函数声明为private并且不予实现。使用像Uncopyable这样的基类也是一种做法。**
-
-## 怎样定义一个C++类 ##
-
-	#include <stdio.h>
-	#include <stdlib.h>
-	#include <new>
-	#include <string.h>
-
-	class String
-	{
-	public:
-		//
-		//	默认构造函数，在定义一个无参对象时调用的就是这个默认构造函数。比如:String str;
-		//	所有参数都有默认值的构造函数，也可以作为默认构造函数，比如：
-		//	String(const char* psz = NULL);
-		//
-		String() : m_pBuf(NULL)
-		{}
-		//
-		//	尽量在初始化列表里初始化所有数据成员
-		//
-		String(const String& rhs) : m_pBuf(rhs.m_pBuf ? strdup(rhs.m_pBuf) : NULL)
-		{}
-		//
-		//	单参数的构造函数，可以作为转换构造函数使用，在需要String类型的地方，如果
-		//	出现的是const char* 类型的参数，编译器会调用这个转换构造函数自动构造出一个
-		//	String对象。比如：
-		//	void fun(const String& str); 
-		//	fun("hello world");
-		//	以上代码相当于：
-		//	String str("hello world");
-		//	fun(str);
-		//
-		String(const char* pszStr) : m_pBuf(pszStr ? strdup(pszStr) : NULL)
-		{}
-		//
-		//	加了explicit修饰的单参构造函数不作为转换构造函数使用，必须显式调用，如：
-		//	String str(20);
-		//	下面这样就不行：
-		//	void fun(const String& str);
-		//	fun(20);
-		//
-		explicit String(size_t maxBufSize)
-		{
-			m_pBuf = (char*)calloc(1, maxBufSize+1);
-		}
-		//
-		//	转换函数子，可以被编译器自动调用。比如：
-		//	void fun(const char* psz);
-		//	String str("hello world");
-		//	fun(str);
-		//	strcpy(buf, str);
-		//
-		operator const char*() const
-		{
-			return m_pBuf;
-		}
-		//
-		//	赋值运算符要保证原有资源已经得到释放了。
-		//
-		String& operator=(const String& rhs) 
-		{
-			//
-			//	先判断是否自我赋值形式，比如：const String& ref = str; str = ref;或 str = str;
-			//	要避免自我赋值，因为：1）释放资源，拷贝资源过程中容易出现悬挂访问现象，2）浪费性能；
-			//
-			if (&rhs != this){		
-				char* pBuf = NULL;
-				if (rhs.m_pBuf){
-					pBuf = strdup(rhs.m_pBuf);
-					//
-					//	因为赋值运算符没有表明是否成功的返回值，分配内存失败只能通过异常通知调用者，
-					//	其它手段都非常不直观，比如：通过在本类中维护一个对象是否有效的状态标识，
-					//	这种方法看起来别扭，比如: lv = rv; if(lv.is_valid()){ ... }
-					//
-					if (!pBuf)		
-						throw std::bad_alloc();
-				}
-				if (m_pBuf)
-					free(m_pBuf);
-				m_pBuf = pBuf;
-			}
-			return *this;
-		}
-		//
-		//	析构函数要保证释放本类拥有的所有资源，为安全性考虑，通常应判断这些资源是否处于有效状态。
-		//	作为基类，析构函数必须声明为虚函数
-		//
-		virtual ~String()
-		{
-			if (m_pBuf)
-				free(m_pBuf);
-		}
-	private:
-		char* m_pBuf;
-	};
-
-	class Utf8String : public String
-	{
-	public:
-		//
-		//	派生类的默认构造函数如果没有显式初始化基类对象，编译器会自动调用基类的默认构造函数
-		//
-		Utf8String() : m_bEncoded(false)
-		{}
-		//
-		//	派生类的拷贝构造函数，要显式调用基类的拷贝构造，否则编译器自动调用的是基类的默认构造，而不是拷贝构造函数。
-		//
-		Utf8String(const Utf8String& rhs) : String(rhs), m_bEncoded(rhs.m_bEncoded)
-		{
-		}
-		Utf8String& operator=(const Utf8String& rhs) 
-		{
-			if (&rhs != this){
-				//
-				//	派生类的赋值运算符函数要显式调用基类的赋值运算符给基类子对象赋值
-				//
-				String::operator=(rhs);
-				m_bEncoded = rhs.m_bEncoded;
-			}
-			return *this;
-		}
-		void Encode()
-		{
-			//...
-		}
-		void Decode()
-		{
-			//...
-		}
-		//...
-	private:
-		bool m_bEncoded;
-	};
-
-
-	class non_copyable
-	{
-	public:
-		non_copyable()
-		{}
-	private:
-		//
-		//	如果不希望有人（包括编译器）不小心调用到本类的拷贝构造和赋值运算符，
-		//	可以将这两个函数声明为私有函数，且不提供实现体
-		//
-		non_copyable& operator=(const non_copyable&);
-		non_copyable(const non_copyable&);
-	};
-
-	class test_non_copyable : private non_copyable
-	{
-	public:
-		test_non_copyable()
-		{}
-	};
-
-	class Base
-	{
-	public:
-		Base() : m_val(0)
-		{}
-		Base(const Base& rhs) : m_val(rhs.m_val)
-		{}
-	private:
-	public:
-		int m_val;
-	};
-
-	class Derived : public Base
-	{
-	public:
-		Derived() : m_val2(0)
-		{}
-		Derived(const Derived& rhs) : m_val2(rhs.m_val2)
-		{}	
-	public:
-		int m_val2;
-	};
-
-	int main()
-	{
-		Derived v1;
-		
-		v1.m_val = 2;
-		v1.m_val2 = 3;
-		
-		Derived v2(v1);
-		
-		printf("val: %d, val2: %d\n", v2.m_val, v2.m_val2);
-		
-		char buf[20];
-		
-		String str("hello");
-		
-		strcpy(buf, str);
-		
-		printf("%s\n", buf);
-		
-		test_non_copyable obj;
-		
-		test_non_copyable lhs(obj);
-		
-		return 0;
-	}
+**有效抽象类(DIY)**：抽象类并且纯虚函数不仅仅是析构函数；    
+**无效抽象类(DIY)**：抽象类并且纯虚函数仅仅是析构函数；声明该定义的原因是为了区分类族，一个类族的公共基类应该是一个有效抽象类，即，约定派生于无效抽象类的类不属于同一类族。    
+**类族**：基类和它的所有派生类的集合；    
+**类族(DIY)**：有效抽象类和它的所有派生类的集合；    
