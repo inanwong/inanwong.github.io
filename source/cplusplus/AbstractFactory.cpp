@@ -1,8 +1,8 @@
-#include "CommonBridge.h"
+ï»¿#include "CommonBridge.h"
 
-// ³éÏó¹¤³§
+// æŠ½è±¡å·¥å‚
 
-// ²úÆ·A
+// äº§å“A
 class AbstractProductA
 {
 public:
@@ -21,7 +21,7 @@ public:
 	void Interface() { cout<<__FUNCTION__<<endl; }
 };
 
-// ²úÆ·B
+// äº§å“B
 class AbstractProductB
 {
 public:
@@ -40,7 +40,7 @@ public:
 	void Interface() { cout<<__FUNCTION__<<endl; }
 };
 
-// ¹¤³§
+// å·¥å‚
 class AbstractFactory
 {
 public:
@@ -48,7 +48,7 @@ public:
 	virtual AbstractProductB* CreateProductB() = 0;
 };
 
-// ¹¤³§A
+// å·¥å‚A
 class ConcreteFactoryA: public AbstractFactory
 {
 public:
@@ -56,7 +56,7 @@ public:
 	AbstractProductB* CreateProductB() { return new ConcreteProductB1; }
 };
 
-// ¹¤³§B
+// å·¥å‚B
 class ConcreteFactoryB: public AbstractFactory
 {
 public:

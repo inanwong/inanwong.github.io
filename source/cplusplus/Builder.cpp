@@ -1,4 +1,4 @@
-#include "CommonBridge.h"
+ï»¿#include "CommonBridge.h"
 
 NAMESPACE_START(Builder)
 
@@ -16,7 +16,7 @@ public:
 	virtual void BuildLeg()  = 0;
 };
 
-// ¹¹ÔìÊİÈË
+// æ„é€ ç˜¦äºº
 class ThinBuilder : public Builder
 {
 public:
@@ -30,7 +30,7 @@ private:
 	Product* m_pProduct;
 };
 
-// ¹¹ÔìÅÖÈË
+// æ„é€ èƒ–äºº
 class FatBuilder : public Builder
 {
 public:
@@ -44,7 +44,7 @@ private:
 	Product* m_pProduct;
 };
 
-// ¹¹ÔìµÄÖ¸»Ó¹Ù
+// æ„é€ çš„æŒ‡æŒ¥å®˜
 class Director
 {
 private:

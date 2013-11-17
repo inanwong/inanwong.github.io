@@ -1,6 +1,6 @@
-#include "CommonBridge.h"
+﻿#include "CommonBridge.h"
 
-// ԭ��ģʽ�������в�Ʒ�Ķ�̬�Ľ�
+// 原型模式用于现有产品的动态改进
 
 NAMESPACE_START(PrototypeImprove)
 

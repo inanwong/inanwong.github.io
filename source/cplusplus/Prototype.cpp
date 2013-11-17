@@ -1,4 +1,4 @@
-#include "CommonBridge.h"
+ï»¿#include "CommonBridge.h"
 
 NAMESPACE_START(Prototype)
 
@@ -34,7 +34,7 @@ public:
 	{
 		m_pData = (delete[] m_pData, NULL);
 	}
-	// ¿½±´¹¹Ôìº¯Êı-Éî¿½±´
+	// æ‹·è´æ„é€ å‡½æ•°-æ·±æ‹·è´
 	ConcretePrototype(const ConcretePrototype &other)
 	{
 		m_pData = new char[(NULL == other.m_pData ? 0 : strlen(other.m_pData)) + 1];

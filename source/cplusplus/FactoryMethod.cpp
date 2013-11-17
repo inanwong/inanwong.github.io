@@ -1,4 +1,4 @@
-#include "CommonBridge.h"
+﻿#include "CommonBridge.h"
 
 enum PRODUCT_TYPE {TYPE_A, TYPE_B};
 

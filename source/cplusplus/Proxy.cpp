@@ -1,4 +1,4 @@
-#include "CommonBridge.h"
+ï»¿#include "CommonBridge.h"
 
 NAMESPACE_START(Proxy)
 
@@ -15,7 +15,7 @@ public:
 		m_pString = (delete m_pString, NULL);
 	}
 private:
-	std::string* m_pString;	// ÊµÌåÖ¸Õë
+	std::string* m_pString;	// å®ä½“æŒ‡é’ˆ
 };
 NAMESPACE_END
 
@@ -33,12 +33,12 @@ public:
 	}
 	void Diaplay()
 	{
-		m_pString = new std::string(m_pszSrc);	// ĞèÒªÊ±´´½¨ÊµÌå
+		m_pString = new std::string(m_pszSrc);	// éœ€è¦æ—¶åˆ›å»ºå®ä½“
 		cout<<m_pString<<endl;
 	}
 private:
-	std::string* m_pString;	// ÊµÌåÖ¸Õë
-	const char* m_pszSrc;	// ÊµÌå´´½¨Ô­ÁÏ
+	std::string* m_pString;	// å®ä½“æŒ‡é’ˆ
+	const char* m_pszSrc;	// å®ä½“åˆ›å»ºåŸæ–™
 };
 NAMESPACE_END
 
@@ -70,7 +70,7 @@ public:
 		}
 		return m_pString;
 	}
-//  Ò»°ãÀ´½²ÖØÔØ³ÉÔ±·ÃÎÊ²Ù×÷·ûÊ±»áÖØÔØÁ½¸ö°æ±¾£¬ÔÚÕâÀïconst°æÖØÔØÎŞ·¨´´½¨ÊµÌå
+//  ä¸€èˆ¬æ¥è®²é‡è½½æˆå‘˜è®¿é—®æ“ä½œç¬¦æ—¶ä¼šé‡è½½ä¸¤ä¸ªç‰ˆæœ¬ï¼Œåœ¨è¿™é‡Œconstç‰ˆé‡è½½æ— æ³•åˆ›å»ºå®ä½“
 // 	const std::string& operator*() const
 // 	{
 // 		return *m_pString;
@@ -80,11 +80,11 @@ public:
 // 		return m_pString;
 // 	}
 private:
-	std::string* m_pString;	// ÊµÌåÖ¸Õë
-	const char* m_pszSrc;	// ÊµÌå´´½¨Ô­ÁÏ
+	std::string* m_pString;	// å®ä½“æŒ‡é’ˆ
+	const char* m_pszSrc;	// å®ä½“åˆ›å»ºåŸæ–™
 };
 
-#if 0	// µ÷ÓÃ·½Ê½
+#if 0	// è°ƒç”¨æ–¹å¼
 	Proxy_VP3::CString strProxy(__FUNCTION__);
 	cout<<strProxy->c_str()<<endl;
 	cout<<*strProxy<<endl;
@@ -148,11 +148,11 @@ public:
 	}
 
 private:
-	char*  m_pszData;	// Êı¾İ
-	size_t m_stLength;	// ×Ö·û´®³¤¶È
+	char*  m_pszData;	// æ•°æ®
+	size_t m_stLength;	// å­—ç¬¦ä¸²é•¿åº¦
 };
 
-#if 0	// µ÷ÓÃ·½Ê½
+#if 0	// è°ƒç”¨æ–¹å¼
 	Proxy_SR1::CString csSR1(__FUNCTION__);
 	Proxy_SR1::CString csSR2 = csSR1;
 	csSR2[1] = '0';
@@ -198,33 +198,33 @@ template <typename T>
 class smart_ptr
 {
 public:
-	// ³õÊ¼µÄ¼ÆÊıÖµÎª1
+	// åˆå§‹çš„è®¡æ•°å€¼ä¸º1
 	smart_ptr(T *p = 0) : pointee(p), count(new size_t(1)) {}
-	// ¿½±´¹¹Ôìº¯Êı£¬¼ÆÊı¼Ó1
+	// æ‹·è´æ„é€ å‡½æ•°ï¼Œè®¡æ•°åŠ 1
 	smart_ptr(const smart_ptr &rhs)
 		: pointee(rhs.pointee), count(rhs.count) { ++*count; }
-	// Îö¹¹£¬¼ÆÊı¼õ1£¬¼õµ½0Ê±½øĞĞÀ¬»ø»ØÊÕ£¬¼´ÊÍ·Å¿Õ¼ä
+	// ææ„ï¼Œè®¡æ•°å‡1ï¼Œå‡åˆ°0æ—¶è¿›è¡Œåƒåœ¾å›æ”¶ï¼Œå³é‡Šæ”¾ç©ºé—´
 	~smart_ptr() { decr_count(); }
-	// ÖØÔØ¸³Öµ²Ù×÷·û
+	// é‡è½½èµ‹å€¼æ“ä½œç¬¦
 	smart_ptr& operator= (const smart_ptr& rhs)
 	{
-		//¸ø×ÔÉí¸³ÖµÒ²¶Ô£¬ÒòÎªÈç¹û×ÔÉí¸³Öµ£¬¼ÆÊıÆ÷ÏÈ¼õ1£¬ÔÙ¼Ó1£¬²¢Î´·¢Éú¸Ä±ä
+		//ç»™è‡ªèº«èµ‹å€¼ä¹Ÿå¯¹ï¼Œå› ä¸ºå¦‚æœè‡ªèº«èµ‹å€¼ï¼Œè®¡æ•°å™¨å…ˆå‡1ï¼Œå†åŠ 1ï¼Œå¹¶æœªå‘ç”Ÿæ”¹å˜
 		++*count;
 		decr_count();
 		pointee = rhs.pointee;
 		count = rhs.count;
 		return *this;
 	}
-	// ÖØÔØ¼ıÍ·²Ù×÷·ûºÍ½âÒıÓÃ²Ù×÷·û£¬Î´Ìá¹©Ö¸ÕëµÄ¼ì²é
+	// é‡è½½ç®­å¤´æ“ä½œç¬¦å’Œè§£å¼•ç”¨æ“ä½œç¬¦ï¼Œæœªæä¾›æŒ‡é’ˆçš„æ£€æŸ¥
 	T *operator->() { return pointee; }
 	const T *operator->() const { return pointee; }
 	T &operator*() { return *pointee; }
 	const T &operator*() const { return *pointee; }
-	size_t get_refcount() { return *count; } // »ñµÃÒıÓÃ¼ÆÊıÆ÷Öµ
+	size_t get_refcount() { return *count; } // è·å¾—å¼•ç”¨è®¡æ•°å™¨å€¼
 private:
-	T *pointee;       // Êµ¼ÊÖ¸Õë£¬±»´úÀí
-	size_t *count;    // ÒıÓÃ¼ÆÊıÆ÷
-	void decr_count() // ¼ÆÊıÆ÷¼õ1
+	T *pointee;       // å®é™…æŒ‡é’ˆï¼Œè¢«ä»£ç†
+	size_t *count;    // å¼•ç”¨è®¡æ•°å™¨
+	void decr_count() // è®¡æ•°å™¨å‡1
 	{
 		if(--*count == 0)
 		{

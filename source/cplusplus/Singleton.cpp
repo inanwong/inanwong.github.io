@@ -1,4 +1,4 @@
-#include "CommonBridge.h"
+﻿#include "CommonBridge.h"
 
 class Singleton
 {

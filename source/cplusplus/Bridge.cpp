@@ -1,7 +1,7 @@
-#include "CommonBridge.h"
+ï»¿#include "CommonBridge.h"
 
 /*
- *	ÇÅ½ÓÄ£Ê½:½«³éÏó²¿·ÖÓëËüµÄÊµÏÖ²¿·Ö·ÖÀë£¬Ê¹ËüÃÇ¶¼¿ÉÒÔ¶ÀÁ¢µØ±ä»¯¡£
+ *	æ¡¥æ¥æ¨¡å¼:å°†æŠ½è±¡éƒ¨åˆ†ä¸å®ƒçš„å®ç°éƒ¨åˆ†åˆ†ç¦»ï¼Œä½¿å®ƒä»¬éƒ½å¯ä»¥ç‹¬ç«‹åœ°å˜åŒ–ã€‚
  */
 NAMESPACE_START(Bridge)
 
@@ -14,7 +14,7 @@ public:
 class ConcretelmplementorA : public Implementor
 {
 public:
-	// ³éÏó²¿·Ö
+	// æŠ½è±¡éƒ¨åˆ†
 	void InterfaceImp() const { cout<<__FUNCTION__<<endl; }
 };
 

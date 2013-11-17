@@ -1,4 +1,4 @@
-#ifndef COMMON_H_
+ï»¿#ifndef COMMON_H_
 #define COMMON_H_
 
 #include <iostream>
@@ -12,7 +12,7 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////
 
 /*
- *	µ¥ÔªÔËĞĞÌ×¼ş
+ *	å•å…ƒè¿è¡Œå¥—ä»¶
  */
 class CUnitRun
 {
@@ -62,7 +62,7 @@ private:
 ////////////////////////////////////////////////////////////////////////////////
 
 /*
- *	ÃüÃû¿Õ¼äºê¶¨Òå
+ *	å‘½åç©ºé—´å®å®šä¹‰
  */
 #define NAMESPACE_START(name)	namespace name {
 #define NAMESPACE_END			}
