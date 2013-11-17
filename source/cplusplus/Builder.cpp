@@ -4,7 +4,7 @@ NAMESPACE_START(Builder)
 
 class Product
 {
-
+void Show() { cout<<__FUNCTION__<<endl; }
 };
 
 class Builder

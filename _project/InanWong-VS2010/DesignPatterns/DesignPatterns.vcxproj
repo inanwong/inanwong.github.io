@@ -80,10 +80,13 @@
     <ClCompile Include="..\..\..\source\cplusplus\Bridge.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Builder.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Composite.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Decorator.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Facade.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\FactoryMethod.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Flyweight.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Prototype.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\PrototypeImprove.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Proxy.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SimpleFactory.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Singleton.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SingletonFactory.cpp" />

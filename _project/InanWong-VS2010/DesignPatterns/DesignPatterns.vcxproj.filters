@@ -22,6 +22,9 @@
     <Filter Include="DesignPatterns\Structural">
       <UniqueIdentifier>{6b85793c-44b2-4fcf-a3a5-0f71e95bd496}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DesignPatterns\Behavioral">
+      <UniqueIdentifier>{47346b66-1e3b-45c1-acac-e102783f7928}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common.cpp">
@@ -70,6 +73,15 @@
       <Filter>DesignPatterns\Structural</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\source\cplusplus\Facade.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Decorator.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Flyweight.cpp">
+      <Filter>DesignPatterns\Structural</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Proxy.cpp">
       <Filter>DesignPatterns\Structural</Filter>
     </ClCompile>
   </ItemGroup>
