@@ -33,7 +33,3 @@ static int Run(int argc, char** argv)
 }
 
 RegistUnitRun("Singleton", Run);
-
-
-
-

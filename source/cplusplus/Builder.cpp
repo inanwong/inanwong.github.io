@@ -45,7 +45,7 @@ private:
 };
 
 // 构造的指挥官
-class Director  
+class Director
 {
 private:
 	Builder* m_pBuilder;

@@ -20,11 +20,11 @@ public:
 	void Interface() { cout<<__FUNCTION__<<endl; }
 };
 
-class AbstractFactory  
+class AbstractFactory
 {
 public:
 	virtual AbstractProduct* CreateProduct() = 0;
-};  
+};
 
 class ConcreteFactoryA: public AbstractFactory
 {
@@ -32,11 +32,11 @@ public:
 	AbstractProduct* CreateProduct() { return new ConcreteProductA; }
 };
 
-class ConcreteFactoryB: public AbstractFactory  
+class ConcreteFactoryB: public AbstractFactory
 {
 public:
 	AbstractProduct* CreateProduct() { return new ConcreteProductB; }
-}; 
+};
 
 static int Run(int argc, char** argv)
 {

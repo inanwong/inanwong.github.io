@@ -62,7 +62,6 @@ public:
 	}
 	virtual ~SingletonA()
 	{
-
 	}
 public:
 	void Function() const
@@ -80,7 +79,6 @@ public:
 	}
 	virtual ~SingletonB()
 	{
-
 	}
 public:
 	void Function() const

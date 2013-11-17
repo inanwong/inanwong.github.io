@@ -78,7 +78,7 @@ static int Run(int argc, char** argv)
 
 	Flyweight* pFlyweightZ = theFlyweightFactory.GetFlyweight("X");
 	pFlyweightZ->Operation(--extrinsicstate);
-	
+
 	Flyweight* pFlyweight = new UnsharedConcreteFlyweight;
 	pFlyweight->Operation(--extrinsicstate);
 	pFlyweight = (delete pFlyweight, NULL);

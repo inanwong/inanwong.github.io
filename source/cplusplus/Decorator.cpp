@@ -54,7 +54,7 @@ static int Run(int argc, char** argv)
 {
 	Component* pConcreteComponent = new ConcreteComponent;
 	pConcreteComponent->Interface();
-	
+
 	Component* pConcreteDecoratorA = new ConcreteDecoratorA(pConcreteComponent);
 	pConcreteDecoratorA->Interface();
 

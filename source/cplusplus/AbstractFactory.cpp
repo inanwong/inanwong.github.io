@@ -46,7 +46,7 @@ class AbstractFactory
 public:
 	virtual AbstractProductA* CreateProductA() = 0;
 	virtual AbstractProductB* CreateProductB() = 0;
-};  
+};
 
 // 工厂A
 class ConcreteFactoryA: public AbstractFactory
@@ -57,12 +57,12 @@ public:
 };
 
 // 工厂B
-class ConcreteFactoryB: public AbstractFactory  
+class ConcreteFactoryB: public AbstractFactory
 {
 public:
 	AbstractProductA* CreateProductA() { return new ConcreteProductA2; }
 	AbstractProductB* CreateProductB() { return new ConcreteProductB2; }
-}; 
+};
 
 static int Run(int argc, char** argv)
 {

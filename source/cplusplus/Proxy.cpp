@@ -104,7 +104,7 @@ public:
 		strcpy(m_pszData, pszSrc);
 		m_pszData[m_stLength + sizeof(char)] = 1;
 	}
-	
+
 	CString(const CString& theOther)
 	{
 		if (this != &theOther)
@@ -134,7 +134,7 @@ public:
 		m_pszData[m_stLength + sizeof(char)] = 1;
 		return m_pszData[stIndex];
 	}
-	
+
 	const char* c_str() const { return m_pszData; }
 	size_t size() const { return m_stLength; }
 
@@ -161,36 +161,36 @@ private:
 NAMESPACE_END
 
 NAMESPACE_START(Proxy_AP)
-template<class T>  
-class auto_ptr {  
-public:  
-	explicit auto_ptr(T *p = 0): pointee(p) {}  
-	auto_ptr(auto_ptr<T>& rhs): pointee(rhs.release()) {}  
-	~auto_ptr() { delete pointee; }  
-	auto_ptr<T>& operator=(auto_ptr<T>& rhs)  
-	{  
-		if (this != &rhs) reset(rhs.release());  
-		return *this;  
-	}  
-	T& operator*() const { return *pointee; }  
-	T* operator->() const { return pointee; }  
-	T* get() const { return pointee; }  
-	T* release()  
-	{  
-		T *oldPointee = pointee;  
-		pointee = 0;  
-		return oldPointee;  
-	}  
-	void reset(T *p = 0)  
-	{  
-		if (pointee != p) {  
-			delete pointee;  
-			pointee = p;  
-		}  
-	}  
-private:  
-	T *pointee;  
-};  
+template<class T>
+class auto_ptr {
+public:
+	explicit auto_ptr(T *p = 0): pointee(p) {}
+	auto_ptr(auto_ptr<T>& rhs): pointee(rhs.release()) {}
+	~auto_ptr() { delete pointee; }
+	auto_ptr<T>& operator=(auto_ptr<T>& rhs)
+	{
+		if (this != &rhs) reset(rhs.release());
+		return *this;
+	}
+	T& operator*() const { return *pointee; }
+	T* operator->() const { return pointee; }
+	T* get() const { return pointee; }
+	T* release()
+	{
+		T *oldPointee = pointee;
+		pointee = 0;
+		return oldPointee;
+	}
+	void reset(T *p = 0)
+	{
+		if (pointee != p) {
+			delete pointee;
+			pointee = p;
+		}
+	}
+private:
+	T *pointee;
+};
 NAMESPACE_END
 
 NAMESPACE_START(Proxy_SP)
@@ -206,7 +206,7 @@ public:
 	// 析构，计数减1，减到0时进行垃圾回收，即释放空间
 	~smart_ptr() { decr_count(); }
 	// 重载赋值操作符
-	smart_ptr& operator= (const smart_ptr& rhs) 
+	smart_ptr& operator= (const smart_ptr& rhs)
 	{
 		//给自身赋值也对，因为如果自身赋值，计数器先减1，再加1，并未发生改变
 		++*count;
@@ -214,19 +214,19 @@ public:
 		pointee = rhs.pointee;
 		count = rhs.count;
 		return *this;
-	}  
+	}
 	// 重载箭头操作符和解引用操作符，未提供指针的检查
 	T *operator->() { return pointee; }
 	const T *operator->() const { return pointee; }
 	T &operator*() { return *pointee; }
 	const T &operator*() const { return *pointee; }
 	size_t get_refcount() { return *count; } // 获得引用计数器值
-private: 
-	T *pointee;       // 实际指针，被代理  
+private:
+	T *pointee;       // 实际指针，被代理
 	size_t *count;    // 引用计数器
 	void decr_count() // 计数器减1
 	{
-		if(--*count == 0) 
+		if(--*count == 0)
 		{
 			delete pointee;
 			delete count;
@@ -244,7 +244,7 @@ static int Run(int argc, char** argv)
 	Proxy_SR1::CString csSR1(__FUNCTION__);
 	Proxy_SR1::CString csSR2 = csSR1;
 	csSR2[1] = '0';
-	
+
 	return 0;
 }
 

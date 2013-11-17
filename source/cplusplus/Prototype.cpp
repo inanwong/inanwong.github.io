@@ -21,7 +21,7 @@ public:
 	{
 		if (NULL == pData)
 		{
-			m_pData = new char[1];   
+			m_pData = new char[1];
 			m_pData[0] = '\0';
 		}
 		else
