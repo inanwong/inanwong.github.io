@@ -79,6 +79,8 @@
     <ClCompile Include="..\..\..\source\cplusplus\AdapterObjects.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Bridge.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Builder.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\ChainofResponsibility.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Command.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Composite.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Decorator.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Facade.cpp" />
@@ -91,6 +93,7 @@
     <ClCompile Include="..\..\..\source\cplusplus\Singleton.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SingletonFactory.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SingletonLazy.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Strategy.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="WinRunMain.cpp" />
   </ItemGroup>

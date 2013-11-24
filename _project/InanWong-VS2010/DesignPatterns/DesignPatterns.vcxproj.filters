@@ -84,6 +84,15 @@
     <ClCompile Include="..\..\..\source\cplusplus\Proxy.cpp">
       <Filter>DesignPatterns\Structural</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\ChainofResponsibility.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Command.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Strategy.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
