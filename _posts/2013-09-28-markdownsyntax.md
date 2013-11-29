@@ -81,9 +81,7 @@ tags:
 
 注意：列表换行时不需要行尾的若干个空格。
 
-注意：jekyll的默认markdown引擎是maruku，不支持中文开头的列表，需要改为rdiscount。编辑_config.yml文件，在`pygments:true`上面添加`markdown: rdiscount`。
-
-注意：rdiscount貌似不支持Html5标签，例如`<article></article>`要用`<div class="article"></div>`替代。
+注意：jekyll的默认markdown引擎是maruku，不支持中文开头的列表，需要改为rdiscount。编辑_config.yml文件，在`pygments:true`上面添加`markdown: rdiscount`
 
 <h3 id="precode">代码区块(Code Blocks)</h3>
 
