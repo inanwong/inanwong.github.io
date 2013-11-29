@@ -93,6 +93,30 @@
     <ClCompile Include="..\..\..\source\cplusplus\Strategy.cpp">
       <Filter>DesignPatterns\Behavioral</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Interpreter.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Iterator.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Mediator.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Memento.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Observer.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\State.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\TemplateMethod.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\cplusplus\Visitor.cpp">
+      <Filter>DesignPatterns\Behavioral</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">

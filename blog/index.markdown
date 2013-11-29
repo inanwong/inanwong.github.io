@@ -4,7 +4,7 @@ title: 博客
 ---
 
 {% for post in site.posts %}
-<article>
+<div class="article">
 	<header>
 		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 		<h3 class="datetext" style="float:left">Posted on {{ post.date | date_to_string }}</h3>
@@ -25,5 +25,5 @@ title: 博客
 		<p style="text-align:right;"><a href="{{ post.url }}">更多内容...</a></p>
 	</footer>
 
-</article>
+</div>
 {% endfor %}

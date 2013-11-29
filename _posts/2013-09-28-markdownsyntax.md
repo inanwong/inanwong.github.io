@@ -69,7 +69,7 @@ tags:
 
 <h3 id="list">列表(Lists)</h3>
 
-规则：无序列表可以使用"\*"、"\+"、"\-"作为列表序号，规定以仅使用"\*"作为列表级别的标识号"\*"后加三个空格。
+规则：无序列表可以使用"\*"、"\+"、"\-"作为列表序号，规定以仅使用"\+"作为列表级别的标识号"\+"后加三个空格。
 
 规则：有序列表使用"\[0~9\]" + "\." + "  "作为列表序号，不同列表项之间使用换行而不是换段落，保证布局紧凑。
 
@@ -78,6 +78,12 @@ tags:
 规则：连续写多个不同序号的列表时可以在中间增加"&lt;br /> + 换行"或者"&lt;p /> + 换行"实现列表分隔，但是不建议连续写多个列表。
 
 规则：建议列表缩进不超过三级，不建议有序列表，无序列表交叉缩进。
+
+注意：列表换行时不需要行尾的若干个空格。
+
+注意：jekyll的默认markdown引擎是maruku，不支持中文开头的列表，需要改为rdiscount。编辑_config.yml文件，在`pygments:true`上面添加`markdown: rdiscount`。
+
+注意：rdiscount貌似不支持Html5标签，例如`<article></article>`要用`<div class="article"></div>`替代。
 
 <h3 id="precode">代码区块(Code Blocks)</h3>
 
@@ -192,6 +198,10 @@ Please don't use any `<blink>` tags.
 <p />
 
     [id]: url/to/image "Optional title attribute"
+	
+规则：如果需要缩放图片，直接插入Html语言即可：
+
+	<img src="/assets/images/projects/uml_graph_type.png" alt="UML Graph Type" width="100%" height="100%"/>
 
 <h2 id="misc">其他(Miscellaneous)</h2>
 

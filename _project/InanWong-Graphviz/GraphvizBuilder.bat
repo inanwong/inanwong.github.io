@@ -12,8 +12,8 @@ SET SRC_DIR=E:\WriteSpace\WriteSpace\inanwong.github.io\_project\InanWong-Graphv
 SET TARGET_DIR=..\..\assets\images\projects\
 
 :: sublime
-rem SET SRC_DIR="E:\WriteSpace\Graphviz\"
-rem SET TARGET_DIR="E:\WriteSpace\Graphviz\bin"
+rem SET SRC_DIR=E:\WriteSpace\Graphviz\src\
+rem SET TARGET_DIR=E:\WriteSpace\Graphviz\png\
 
 cd /d %SRC_DIR%
 

@@ -3,6 +3,7 @@ source      : .
 destination : ./_site
 plugins     : ./_plugins
 permalink   : /blog/:year/:month/:day/:title.html
+markdown    : rdiscount
 pygments    : true
 safe        : true
 

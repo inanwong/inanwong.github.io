@@ -86,6 +86,11 @@
     <ClCompile Include="..\..\..\source\cplusplus\Facade.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\FactoryMethod.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Flyweight.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Interpreter.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Iterator.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Mediator.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Memento.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Observer.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Prototype.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\PrototypeImprove.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Proxy.cpp" />
@@ -93,7 +98,10 @@
     <ClCompile Include="..\..\..\source\cplusplus\Singleton.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SingletonFactory.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\SingletonLazy.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\State.cpp" />
     <ClCompile Include="..\..\..\source\cplusplus\Strategy.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\TemplateMethod.cpp" />
+    <ClCompile Include="..\..\..\source\cplusplus\Visitor.cpp" />
     <ClCompile Include="Common.cpp" />
     <ClCompile Include="WinRunMain.cpp" />
   </ItemGroup>
