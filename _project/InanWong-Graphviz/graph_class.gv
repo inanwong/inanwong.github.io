@@ -1,0 +1,48 @@
+/**
+ * == Graphviz UML 模块 
+ * Copyright (c) 2013 Inan Wong, All rights reserved.
+ * http://inanwong.github.io/
+ * 
+ * @version 1.0
+ * @author  Inan Wong(<a href="mailto:inanwong@gmail.com">inanwong@gmail.com</a>)
+ * @description 使用Graphviz画类
+ * ‎-- 2013-‎11-‎29 23:23:34
+ */
+
+ digraph G {
+    
+    # 间距
+    nodesep = 0.8;
+
+    subgraph class {
+
+        # 抽象类
+        AbstractClass[label = <<B><I>AbstractClass</I></B>> shape = "record"]
+
+        node[shape = "plaintext"]
+
+        # 具体类
+        ConcreteClass[
+            label = <<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+                        <TR><TD><B>ConcreteClass</B></TD></TR>
+                        <HR></HR>
+                        <TR><TD ALIGN="left">- length: size_t [1] = 0 {r}</TD></TR>
+                        <TR><TD ALIGN="left">- buffer: char* [1] = NULL {rw}</TD></TR>
+                        <HR></HR>
+                        <TR><TD ALIGN="left">+ balanceOn (date: Date) : Money {query}</TD></TR>
+                    </TABLE>>
+        ]
+
+        # 模板类
+        TemplateClass[
+            label = <<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+                        <TR><TD><B>ConcreteClass</B>&lt;Template&gt;</TD></TR>
+                        <HR></HR>
+                        <TR><TD ALIGN="left">- length: size_t [1] = 0 {r}</TD></TR>
+                        <TR><TD ALIGN="left">- buffer: char* [1] = NULL {rw}</TD></TR>
+                        <HR></HR>
+                        <TR><TD ALIGN="left">+ balanceOn (date: Date) : Money {query}</TD></TR>                        
+                    </TABLE>>
+        ]
+    }
+}

@@ -1,0 +1,45 @@
+/**
+ * == Graphviz UML 模块 
+ * Copyright (c) 2013 Inan Wong, All rights reserved.
+ * http://inanwong.github.io/
+ * 
+ * @version 1.0
+ * @author  Inan Wong(<a href="mailto:inanwong@gmail.com">inanwong@gmail.com</a>)
+ * @description 使用Graphviz画类
+ * ‎-- 2013-‎11-‎29 23:23:34
+ */
+
+ digraph G {
+    
+    nodesep = 0.8;
+    node[
+        shape = "record"
+        fontname = "Microsoft YaHei"
+    ]
+
+    # Node note
+    subgraph nodenote {
+
+        Class[label = <<B>Class</B>> shape = "record"]
+
+        ClassNoteA[label = "--中文注释" shape = "note"]
+        ClassNoteB[label = "--中文注释" shape = "none"]
+
+        Class -> ClassNoteA[arrowhead = none arrowtail = none style = dotted]
+        Class -> ClassNoteB[arrowhead = none arrowtail = vee dir = both style = dotted]
+
+        ClassX[label = <<B>Class</B>> shape = "record" xlabel = "--XLabel"]
+    }
+
+    # Arrow note
+    subgraph arrownote {
+        
+        Person[xlabel = "owner"]
+        
+        Person -> Car[arrowhead = vee arrowtail = vee dir = both
+            taillabel = "0..1" headlabel = "*"]
+
+        { rank=same; Person; Car }
+    }
+
+}

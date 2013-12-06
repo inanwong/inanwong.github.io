@@ -1,0 +1,63 @@
+/**
+ * == Graphviz UML 模块 
+ * Copyright (c) 2013 Inan Wong, All rights reserved.
+ * http://inanwong.github.io/
+ * 
+ * @version 1.0
+ * @author  Inan Wong(<a href="mailto:inanwong@gmail.com">inanwong@gmail.com</a>)
+ * @description 使用Graphviz画类
+ * ‎-- 2013-‎11-‎29 23:23:34
+ */
+
+ digraph G {
+    
+    nodesep = 0.8;
+    node[shape = "record"]
+
+    # 关联
+    subgraph association {
+
+        # 单向关联
+        A -> B[arrowhead = vee]
+
+        # 双向关联
+        Person -> Car[arrowhead = vee arrowtail = vee dir = both]
+        
+        # 聚合(临时工)
+        Club -> Men[arrowhead = vee arrowtail = odiamond dir = both]
+        Club -> Women[arrowhead = vee arrowtail = odiamond dir = both]
+
+        # 组合(正式员工)
+        Polygon -> Point[arrowhead = vee arrowtail = diamond dir = both]
+    }
+
+    # 实现
+    subgraph implement {
+        Shape -> Circle[arrowhead = none arrowtail = onormal dir = both style = dotted]
+    }    
+
+    # 泛化
+    subgraph generalization {
+        Class -> ClassEx[arrowhead = none arrowtail = onormal dir = both]
+    }
+
+    # 依赖
+    subgraph dependency {
+        Handler -> Ptr[arrowhead = none arrowtail = vee dir = both style = dotted]
+    }
+
+    # 派生
+    subgraph derivedproperty {
+        # 具体类
+        DateRange[
+            label = <<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0">
+                        <TR><TD><B>DateRange</B></TD></TR>
+                        <HR></HR>
+                        <TR><TD ALIGN="left">- start: Date [1] = 0 {rw}</TD></TR>
+                        <TR><TD ALIGN="left">- end: Date [1] = 0 {rw}</TD></TR>
+                        <TR><TD ALIGN="left">- /rande: Integer [1] = 0 {r}</TD></TR>
+                    </TABLE>>
+            shape = "plaintext"
+        ]
+    }
+}
