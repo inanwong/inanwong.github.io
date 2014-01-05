@@ -1,0 +1,31 @@
+.reply_name {
+	color: #000
+}
+.reply_user {
+	float: left;
+	line-height: 30px
+}
+.floor_footer_item {
+	text-align: left;
+	line-height: 30px;
+	font-size: 12px;
+	position: relative;
+	padding-top: 2px
+}
+.floor_content {
+	font-size: 14px;
+	color: black;
+	line-height: 24px;
+	padding-bottom: 5px
+}
+.floor_footer_item .list_item_time {
+	color: #a9aeb3;
+	margin: 0 5px
+}
+.floor_footer_item .separator {
+	color: #a0aeb6;
+	margin: 0 5px
+}
+.list_item_footer .list_item_time {
+	margin-right: 5px
+}

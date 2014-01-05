@@ -1,0 +1,8 @@
+.icon_btn {
+	text-indent: -999em;
+	text-align: center
+}
+.pic_free_mode .icon_btn {
+	text-indent: 0;
+	background-image: none
+}

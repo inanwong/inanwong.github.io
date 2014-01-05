@@ -1,0 +1,8 @@
+body {
+	font-size: 14px
+}
+.pb_icon {
+	background-image: url(http://tb2.bdstatic.com/tb/mobile/spb/img/spb_icon.png);
+	background-repeat: no-repeat;
+	background-size: 43px 725px
+}

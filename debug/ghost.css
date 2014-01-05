@@ -1,0 +1,121 @@
+.ghost_wrapper {
+	display: block;
+	padding: 10px;
+	position: fixed;
+	z-index: 198;
+	bottom: 0;
+	left: 0
+}
+.ghost_plus_circle {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	background: #0b8feb -webkit-gradient(linear,0 0,0 100%,from(#159bf8),to(#0081dc));
+	-webkit-box-shadow: 0 1px 2px 1px rgba(0,0,0,0.2)
+}
+.ghost_plus {
+	width: 40px;
+	height: 40px;
+	position: absolute
+}
+.ghost_plus_animate {
+	-webkit-transition: -webkit-transform 400ms ease
+}
+.ghost_plus:before, .ghost_plus:after {
+	content: '';
+	position: absolute;
+	background: #fff;
+	left: 50%;
+	top: 50%
+}
+.ghost_plus:before {
+	width: 4px;
+	height: 18px;
+	margin: -9px 0 0 -2px
+}
+.ghost_plus:after {
+	width: 18px;
+	height: 4px;
+	margin: -2px 0 0 -9px
+}
+.ghost_plus_active .ghost_plus {
+	-webkit-transform: rotate(315deg)
+}
+.ghost_panel {
+	position: absolute;
+	z-index: -1;
+	background: #fcfcfc;
+	border: 1px solid #c5c5c5;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
+	font: normal 14px/38px Arial;
+	white-space: nowrap;
+	bottom: -300px;
+	opacity: 0
+}
+.ghost_panel_animate {
+	-webkit-transition: bottom 100ms ease, opacity 100ms ease
+}
+.ghost_panel_active {
+	bottom: 60px;
+	opacity: 1
+}
+.ghost_forum {
+	display: block;
+	padding: 0 10px 0 40px;
+	border-bottom: 2px solid #baddf7;
+	border-radius: 6px 6px 0 0;
+	color: #444;
+	font-weight: bold;
+	background-color: #e0f2ff;
+	background-position: 5px -605px
+}
+.ghost_tool_item {
+	display: block;
+	color: #333;
+	padding: 0 10px 0 40px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #e6e6e6;
+	background-color: #fff;
+	background-position: 0 -365px;
+	-webkit-tap-highlight-color: transparent
+}
+.ghost_tool_item:first-child {
+	border-top: 0
+}
+.ghost_tool_item:last-child {
+	border-bottom: 0;
+	border-radius: 0 0 6px 6px
+}
+.ghost_item_clicked {
+	background-color: #ccc
+}
+.ghost_tool_reply {
+	background-position: 5px -365px
+}
+.ghost_tool_seelz {
+	background-position: 5px -405px
+}
+.ghost_tool_seeall {
+	background-position: 5px -445px
+}
+.ghost_tool_collect {
+	background-position: 5px -485px
+}
+.ghost_tool_share {
+	background-position: 5px -565px
+}
+.ghost_tool_interest_smiley {
+	background-position: 5px -645px
+}
+.ghost_tool_refresh {
+	background-position: 5px -685px
+}
+.ghost_overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 196
+}

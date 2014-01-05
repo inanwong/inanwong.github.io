@@ -1,0 +1,58 @@
+.list {
+	overflow: hidden
+}
+.list_item {
+	border-bottom: 1px solid #e3e3e3;
+	overflow: hidden
+}
+.list_inner_wrapper {
+	position: relative;
+	padding: 15px 10px;
+	overflow: hidden
+}
+.list_item:last-child {
+	border-bottom: 0
+}
+.list_item_footer {
+	clear: both;
+	text-align: left;
+	vertical-align: middle;
+	color: #c4ddf6;
+	font-size: 12px;
+	position: relative
+}
+.list_item_footer span {
+	color: #a9aeb3;
+	font-size: 12px
+}
+.content {
+	font-size: 16px;
+	margin-bottom: 8px;
+	color: #000;
+	line-height: 24px;
+	word-break: break-all
+}
+.reply_icon {
+	display: inline-block;
+	float: right;
+	width: 47px;
+	text-align: right;
+	border: 1px solid #d9d9d9;
+	border-radius: 5px;
+	height: 24px;
+	padding: 1px 8px;
+	color: #666;
+	line-height: 24px;
+	background-position: 10px -145px;
+	background: #79828f -webkit-gradient(linear,0 100%,0 0,from(#f4f4f4),to(#fff));
+	margin-top: -5px
+}
+.reply_icon .pb_icon {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	position: relative;
+	top: 4px;
+	left: -5px;
+	background-position: 0 -150px
+}
