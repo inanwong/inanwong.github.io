@@ -16,11 +16,11 @@ tags:
     *   [导航(Navigation)](#navg)
     *   [段落和换行(Paragraphs and Line Breaks)](#pandl) 
     *   [区块引用(Blockquotes)](#blockquote)
-    *   [列表(Lists)](#list)
+    *   [列表(Lists)](#lists)
     *   [代码区块(Code Blocks)](#precode)
     *   [水平线(Horizontal Rules)](#hr)
 *   [区段元素(Span Elements)](#span)
-    *   [链接(Links)](#link)
+    *   [链接(Links)](#links)
     *   [锚点(Anchor)](#na_anchor)
     *   [强调(Emphasis)](#em)
     *   [代码(Code)](#code)
@@ -95,13 +95,13 @@ tags:
 
 <h2 id="span">区段元素(Span Elements)</h2>
 
-<h3 id="link">链接(Links)</h3>
+<h3 id="links">链接(Links)</h3>
 
-规则：内嵌链接(行内式：inline link)，格式为`[an example]("http://example.com/" "Title")`，其中"]"与"（"紧跟，链接与标题之间保留一个" "，建议写标题，同一个主机必须使用相对路径。参考如下格式：
+规则：内嵌链接(行内式：inline link)，格式为`[an example](http://example.com/ "Title")`，其中"]"与"（"紧跟，链接与标题之间保留一个" "，建议写标题，同一个主机必须使用相对路径。参考如下格式：
 
-    This is [an example]("http://example.com/" "Title") inline link.
-    [This link]("http://example.net/") has no title attribute.  
-    See my [About]("/about/") page for details.
+    This is [an example](http://example.com/ "Title") inline link.
+    [This link](http://example.net/) has no title attribute.  
+    See my [About](/about/) page for details.
 
 规则：参考链接（reference link），链接文字定义格式为`[an example][id]`，其中"\]"与"\["紧跟，例如：`This is [an example][id] reference-style link.`。链接内容定义格式为`[id]: "http://example.com/"  "Optional Title Here"`，其中网址支持使用"<"和">"包含，标题支持使用""""""、"'""'"、"("")"包含。建议全部分行写，并对齐，参考如下格式：
 
