@@ -1,4 +1,4 @@
-﻿---
+---
 layout: blog-post
 title: "使用C++实现UNICODE文本读写"
 excerpt: "使用C++实现UNICODE文本读写"

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: blog-post
 title: "WinDbg Cmd"
 excerpt: "WinDbg Cmd"
