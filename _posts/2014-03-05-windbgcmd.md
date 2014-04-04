@@ -1,4 +1,4 @@
----
+﻿---
 layout: blog-post
 title: "WinDbg Cmd"
 excerpt: "WinDbg Cmd"
@@ -141,34 +141,19 @@ The vertarget command displays the current version of the Microsoft Windows oper
 	  Kernel time: 0 days 0:00:00.000
 	  User time: 0 days 0:00:00.000
 
+q, qq (Quit)
+The q and qq commands end the debugging session. (In CDB and KD, this command also exits the debugger itself. In WinDbg, this command returns the debugger to dormant mode.)
+
+Remarks
+In user-mode debugging, the q command ends the debugging session and closes the target application.
+
+In kernel-mode debugging, the q command saves the log file and ends the debugging session. The target computer remains locked.
+
+If this command does not work in KD, press CTRL+R+ENTER on the debugger keyboard, and then retry the q command. If this action does not work, you must use CTRL+B+ENTER to exit the debugger.
+
+The qq command behaves exactly like the q command, unless you are performing remote debugging. During remote debugging, the q command has no effect, but the qq command ends the debugging server. For more information about this effect, see Remote Debugging Through the Debugger.
 
 http://blog.csdn.net/ithzhang/article/details/8630429
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### 元命令(Meta-Command)/点命令(Dot Command)(140+) ###
 
@@ -192,5 +177,13 @@ http://blog.csdn.net/ithzhang/article/details/8630429
 
 大多数扩展模块都支持使用help命令来显示这个模块的基本信息和所包含命令。如：!ext.help。
 
+## 
 
+http://bbs.dbgtech.net/forum.php
+
+http://www.dbgtech.net/windbghelp/index.html
+
+http://www.cnblogs.com/answeryi/archive/2009/07/14/1523662.html
+
+http://www.dbgtech.net/windbghelp/hh/debugger/r07_use_operation_d368d81b-2cd4-4227-9b84-b5d956eed347.xml.htm
 
