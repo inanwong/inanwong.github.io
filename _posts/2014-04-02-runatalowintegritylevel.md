@@ -1,6 +1,6 @@
 ---
 layout: blog-post
-title: "Run At A Low Integrity Level"
+title: "以低完整性运行进程"
 excerpt: "Run At A Low Integrity Level"
 location: "Shenzhen NanShan"
 time: 05:23 PM
@@ -21,7 +21,6 @@ To run calc.exe at low integrity
 
     icacls lowcalc.exe /setintegritylevel low 
 </BR>
-
 	icacls C:/Windows/notepad.exe /setintegritylevel low
 	
 3.Run the low-integrity version of calc.exe.

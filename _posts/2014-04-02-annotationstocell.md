@@ -12,11 +12,11 @@ tags:
 
 ## Excel批注转换成单元格 ##
 
-Sub Annotations()
-    Dim C As Comment
-    For i = 1 To Worksheet.Count
-        For Each C In Worksheets(i).Comments
-            C.Parent.Value = C.Parent.Value & "Annotations:" & C.Text
+    Sub Annotations()
+        Dim C As Comment
+        For i = 1 To Worksheet.Count
+            For Each C In Worksheets(i).Comments
+                C.Parent.Value = C.Parent.Value & "Annotations:" & C.Text
+            Next
         Next
-    Next
-End SUb
+    End SUb
