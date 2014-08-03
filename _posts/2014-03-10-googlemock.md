@@ -1,4 +1,4 @@
-﻿---
+---
 layout: blog-post
 title: "Google Mock"
 excerpt: "Google Mock"
